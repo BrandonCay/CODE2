@@ -1,0 +1,26 @@
+1    <Program>             --->      BEGIN <Statement-List> END                                                 {BEGIN}
+2    <Statement-List>    --->      <Statement> <Statement-Tail>                                                  {ID}
+3    <Statement-Tail>    --->      <Statement><Statement-Tail>                                                   {ID}
+4    <Statement-Tail>    --->       λ                                                                                                                {END}
+5    <Statement>           --->      ID := <Expression>;                                                                             {ID}
+6    <Statement>           --->      WRITE (<Parameter>);                                                                         {WRITE}
+7    <Statement>           --->      READ (<IDlist> );                                                                                      {READ}
+8    <Expression>         --->       <Factor><ExpressionTail>                                                                    {ID, REAL, INTEGER}
+9    <ExpressionTail>   --- >      + <Factor><ExpressionTail>                                                     { PLUS  }
+10  <ExpressionTail>   --->       λ                                                                                                                      { SEMICOLON, RIGHTP }
+11  <Factor>                --->      <Primary><FactorTail>                                                                        { LEFTP, ID, REAL, INTEGER}
+12  <FactorTail>          --- >      * <Primary> <FactorTail>                                                                     { MULTIPLICATION }
+13  <FactorTail>          --- >      / <Primary> <FactorTail>                                                                     { DIVISION }
+14  <FactorTail>          --->       λ                                                                                                                      { RIGHTP, SEMICOLON, PLUS }
+15  <Primary>              --->      ( <Expression> )                                                                                               { LEFTP }
+16   <Primary>             --->      ID                                                                                                                    {ID}
+17   <Primary>             --->      REAL                                                                                                        {REAL}
+18  <Primary>              --->      INTEGER                                                                                                  {INTEGER}
+19  <Parameter>           -------> STRING                                                                                                           { STRING }
+20   <Parameter>          -------> <ExpressionList>                                                                                             { ID, REAL,  INTEGER}
+21  <ExpressionList>   ------>   <Expression> <ExpressionListTail>                                          {ID, REAL,  INTEGER}
+22  <ExpressionListTail>     ------>   , <Expression> <ExpressionListTail>                     { COMMA }
+23  <ExpressionListTail>   ------>   λ                                                                                                                {  RIGHTP }                                     
+24   <IDlist>                       ------>   ID <IDTail>                                                                                               { ID }
+25   <IDTail>                       ------>   , ID <IDTail>                                                                                            { COMMA }
+26  <IDTail>                      ------>   λ                                                                                                                { RIGHTP }
