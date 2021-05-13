@@ -1,0 +1,5 @@
+BEGIN WRITE("This is an invalid program:  right parenthesis is missing");
+READ( num1, num2 ;
+total := num1 + num2 + num3;END
+
+

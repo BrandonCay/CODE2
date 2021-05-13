@@ -1,0 +1,14 @@
+num1
+:=  
+12.5;
+"It is nice outside"
+/* compute area */ 
+sum 
++ 
+{ 
+* 
+) 
+sum 
+:= 
+num1
+?

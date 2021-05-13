@@ -1,0 +1,27 @@
+AND  
+BEGIN  
+END  
+FOR  
+IF   
+NOT  
+OR  
+READ  
+WHILE  
+WRITE  
+/* val */   
+sum2   
+25.49     
+"John Doe"   
++    
+*    
+:=  
+=  
+>    
+<    
+( 
+,   
+)   
+;    
+$     
+/     
+150
